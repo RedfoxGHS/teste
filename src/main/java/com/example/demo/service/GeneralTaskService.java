@@ -8,4 +8,5 @@ public interface GeneralTaskService {
     public List<GeneralTask> findAll();
     public GeneralTask findById(Long id);
     public GeneralTask create(GeneralTask generalTask);
+    public void deleteById(Long id);
 }

@@ -31,4 +31,9 @@ public class GeneralTaskServiceImpl implements GeneralTaskService {
     public GeneralTask create(GeneralTask generalTask) {
         return generalTaskRepository.save(generalTask);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        generalTaskRepository.deleteById(id);
+    }
 }

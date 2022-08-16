@@ -25,7 +25,15 @@ public class GeneralTaskController {
     }
 
     @PostMapping
-    public GeneralTask create(@RequestBody GeneralTask generalTask){
+    public GeneralTask create(@PathVariable Long id, @PathVariable String name){
+        GeneralTask generalTask = new GeneralTask();
+        generalTask.setIdTask(id);
+        generalTask.setName(name);
         return generalTaskService.create(generalTask);
+    }
+
+    @DeleteMapping
+    public void delete(@PathVariable Long id){
+        generalTaskService.deleteById(id);
     }
 }
