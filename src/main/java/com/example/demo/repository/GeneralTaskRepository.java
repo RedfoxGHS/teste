@@ -4,4 +4,5 @@ import com.example.demo.entity.GeneralTask;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface GeneralTaskRepository extends MongoRepository<GeneralTask, Long> {
+    public void deleteByIdTask(Long idTask);
 }

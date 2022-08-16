@@ -9,7 +9,9 @@ import javax.annotation.Generated;
 @Data
 @Document
 public class GeneralTask {
+
     @Id
     private Long idTask;
+
     private String name;
 }

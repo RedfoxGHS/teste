@@ -34,6 +34,6 @@ public class GeneralTaskServiceImpl implements GeneralTaskService {
 
     @Override
     public void deleteById(Long id) {
-        generalTaskRepository.deleteById(id);
+        generalTaskRepository.deleteByIdTask(id);
     }
 }
