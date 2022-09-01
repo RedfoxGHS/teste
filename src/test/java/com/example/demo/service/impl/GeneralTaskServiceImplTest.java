@@ -14,7 +14,7 @@ public class GeneralTaskServiceImplTest {
     }
 
     @Test
-    public void testGithubActionsFail(){
-        assertEquals(10, 1);
+    public void testGithubActionsTrue(){
+        assertTrue(true);
     }
 }
