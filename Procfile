@@ -1,0 +1,1 @@
+web: hava -jar build/libs/gradleProject-0.0.1-SNAPSHOT.jar

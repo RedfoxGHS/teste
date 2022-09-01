@@ -20,12 +20,12 @@ public class GeneralTaskController {
     }
 
     @GetMapping("/{id}")
-    public GeneralTask findById(@PathVariable Long id){
+    public GeneralTask findById(@RequestParam Long id){
         return generalTaskService.findById(id);
     }
 
     @PostMapping
-    public GeneralTask create(@PathVariable Long id, @PathVariable String name){
+    public GeneralTask create(@RequestParam Long id, @RequestParam String name){
         GeneralTask generalTask = new GeneralTask();
         generalTask.setIdTask(id);
         generalTask.setName(name);
@@ -33,7 +33,7 @@ public class GeneralTaskController {
     }
 
     @DeleteMapping
-    public void delete(@PathVariable Long id){
+    public void delete(@RequestParam Long id){
         generalTaskService.deleteById(id);
     }
 }
