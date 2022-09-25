@@ -3,12 +3,12 @@ import os
 
 port = 465
 smtp_server = "smtp.gmail.com"
-USERNAME = os.environ.get('USER_GABRIEL')
+USERNAME = os.environ.get('USER_EMAIL')
 PASSWORD = os.environ.get('USER_PASSWORD')
 message = """\
 Subject: Testando
 
-agora essa #$%$& tem que ir.
+agora essa ..... tem que ir.
 """
 
 context = ssl.create_default_context()
