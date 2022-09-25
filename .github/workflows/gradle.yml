@@ -32,11 +32,13 @@ jobs:
 
   notificacao:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Executar scripts versionados
-        uses: actions/checkout@v3
-#      - name: Run email code
-#        env:
-#          MAIL_TEST: ${{secrets.MAIL}}
-      - run: sh scripts/send-email.sh
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Run email code
+        env:
+          USER_EMAIL: ${{ secrets.MAIL }}
+          USER_PASSWORD: ${{ secrets.PASSWORD }}
+        run: python send_email.py
