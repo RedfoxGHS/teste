@@ -36,16 +36,17 @@ jobs:
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
-          connection_url: ${{secrets.MAIL_CONNECTION_STAR}}
+#          connection_url: ${{secrets.MAIL_CONNECTION_STAR}}
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{secrets.USER_EMAIL}}
           password: ${{secrets.USER_PASSWORD}}
           subject: Github Actions job result
           to: ${{secrets.USER_EMAIL}}
-          from: ${{secrets.USER_EMAIL}}
+          from: Teste Github Actions
           body: Build job of ${{github.repository}} completed successfully!
           html_body: file://README.html
+          secure: true
 #      - uses: actions/checkout@v2
 #      - uses: actions/setup-python@v2
 #        with:
