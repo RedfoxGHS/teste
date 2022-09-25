@@ -39,10 +39,10 @@ jobs:
 #          connection_url: ${{secrets.MAIL_CONNECTION_STAR}}
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{secrets.USER_EMAIL}}
-          password: ${{secrets.USER_PASSWORD}}
+          username: ${{ secrets.USER_EMAIL }}
+          password: ${{ secrets.USER_PASSWORD }}
           subject: Github Actions job result
-          to: ${{secrets.USERNAME}}
+          to: ${{ secrets.USERNAME }}
           from: Teste Github Actions
           body: Build job of ${{github.repository}} completed successfully!
           html_body: file://README.html
