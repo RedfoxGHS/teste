@@ -33,13 +33,26 @@ jobs:
   notificacao:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
         with:
-          python-version: 3.x
-      - name: Run email code
-        env:
-          USER_EMAIL: ${{ secrets.USER_EMAIL }}
-          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
-        run: python send_email.py
+          connection_url: ${{secrets.MAIL_CONNECTION_STAR}}
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{secrets.USER_EMAIL}}
+          password: ${{secrets.USER_PASSWORD}}
+          subject: Github Actions job result
+          to: ${{secrets.USER_EMAIL}}
+          from: ${{secrets.USER_EMAIL}}
+          body: Build job of ${{github.repository}} completed successfully!
+          html_body: file://README.html
+#      - uses: actions/checkout@v2
+#      - uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.x
+#      - name: Run email code
+#        env:
+#          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+#          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+#        run: python send_email.py
 
