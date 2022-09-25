@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Executar scripts versionados
         uses: actions/checkout@v3
-      - name: Run email code
-        env:
-          MAIL_TEST: ${{secrets.MAIL}}
-        run: sh scripts/send-email.sh
+#      - name: Run email code
+#        env:
+#          MAIL_TEST: ${{secrets.MAIL}}
+      - run: sh scripts/send-email.sh
